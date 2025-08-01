@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Responsive Flex Layout</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 20px;
+      background: #f2f2f2;
+      font-family: sans-serif;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .box {
+      background-color: #255589;
+      height: 50px;
+    }
+
+    /* Desktop layout  */
+    @media (min-width: 1024px) {
+      .container {
+        flex-direction: row;
+      }
+
+      .top-row {
+        display: flex;
+        width: 100%;
+        gap: 10px;
+      }
+
+      .top-row .box {
+        flex: 1;
+      }
+
+      .middle-box {
+        width: 100%;
+        height: 100px;
+        background: #dac107;
+      }
+
+      .three-boxes {
+        display: flex;
+        gap: 10px;
+        width: 100%;
+      }
+
+      .three-boxes .box {
+        flex: 1;
+        height: 70px;
+        background: #08ab26
+      }
+
+      .bottom-row {
+        display: flex;
+        width: 100%;
+        gap: 10px;
+      }
+
+      .bottom-row .box {
+        flex: 1;
+        background: #e60606
+      }
+    }
+
+    /* Tablet layout */
+    @media (min-width: 768px) and (max-width: 1023px) {
+      .container {
+        flex-direction: column;
+      }
+
+      .container .box,
+      .middle-box {
+        width: 100%;
+      }
+
+      .box {
+        height: 20px;
+      }
+      .middle-box {
+        height: 120px;
+        background: #ece506;
+      }
+
+      .three-boxes {
+        display: flex;
+        gap: 10px;
+        margin-top: 10px;
+      }
+
+      .three-boxes .box {
+        flex: 1;
+        height: 50px;
+        background: #08ab26
+      }
+      .bottom-row {
+        display: flex;
+        width: 100%;
+        gap: 10px;
+      }
+      .bottom-row .box {
+        flex: 1;
+        height: 50px;
+        background: #e60606
+      }
+    }
+
+    /* Mobile layout  */
+    @media (max-width: 767px) {
+      .container {
+        flex-direction: column;
+      }
+
+      .box,
+      .middle-box {
+        width: 100%;
+        height: 20px;
+        margin-bottom: 8px;
+        background-color: #255589;
+      }
+
+      .middle-box {
+        height: 100px;
+        background: #e4e407;
+      }
+      .three-boxes .box {
+        flex: 1;
+        height: 70px;
+        background: #08ab26
+      }
+      .bottom-row .box {
+        flex: 1;
+        background: #e60606
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <!-- Top row -->
+    <div class="top-row">
+      <div class="box"></div>
+      <div class="box"></div>
+    </div>
+
+    <!-- Middle box -->
+    <div class="middle-box"></div>
+
+    <!-- Three boxes -->
+    <div class="three-boxes">
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+    </div>
+
+    <!-- Bottom row -->
+    <div class="bottom-row">
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+    </div>
+
+  </div>
+
+</body>
+</html>
